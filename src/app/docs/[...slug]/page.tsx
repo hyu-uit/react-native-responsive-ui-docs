@@ -3,6 +3,7 @@ import { findNavItem } from "@/lib/docs-navigation";
 import { Breadcrumb } from "@/components/docs/Breadcrumb";
 import { IntroductionPage } from "./content/introduction";
 import { InstallationPage } from "./content/installation";
+import { CreateScaledStylesPage } from "./content/create-scaled-styles";
 import { PlaceholderPage } from "./content/placeholder";
 
 interface DocsPageProps {
@@ -28,6 +29,8 @@ export default async function DocsPage({ params }: DocsPageProps) {
         <IntroductionPage />
       ) : slugPath === "installation" ? (
         <InstallationPage />
+      ) : slugPath === "auto-scale/create-scaled-styles" ? (
+        <CreateScaledStylesPage />
       ) : (
         <PlaceholderPage title={item.title} />
       )}
