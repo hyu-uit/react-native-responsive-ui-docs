@@ -7,6 +7,7 @@ import { CreateScaledStylesPage } from "./content/create-scaled-styles";
 import { SFunctionPage } from "./content/s-function";
 import { DesignTokensPage } from "./content/design-tokens";
 import { ResponsiveFunctionPage } from "./content/responsive-function";
+import { ResponsiveSwitchPage } from "./content/responsive-switch";
 import { PlaceholderPage } from "./content/placeholder";
 
 interface DocsPageProps {
@@ -40,6 +41,8 @@ export default async function DocsPage({ params }: DocsPageProps) {
         <DesignTokensPage />
       ) : slugPath === "responsive/responsive-function" ? (
         <ResponsiveFunctionPage />
+      ) : slugPath === "responsive-switch/component" ? (
+        <ResponsiveSwitchPage />
       ) : (
         <PlaceholderPage title={item.title} />
       )}
