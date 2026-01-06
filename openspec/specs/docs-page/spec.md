@@ -228,3 +228,76 @@ The s() Function page SHALL display comprehensive utility documentation containi
 - **THEN** Previous link shows "createScaledStyles"
 - **AND** Next link shows "Design Tokens"
 
+### Requirement: Design Tokens Page Content
+
+The Design Tokens page SHALL display comprehensive configuration documentation containing:
+- Title "Design Tokens" with "Configuration" badge
+- Description explaining semantic spacing, typography, and sizing values
+- Action buttons for "Configure" and "API Reference"
+- Feature cards section with "Pre-defined Values" and "Fully Customizable" cards
+- "Using Tokens" section with code example showing token strings in createScaledStyles
+- "Customizing via Provider" section with ResponsiveProvider code example
+- "Default Token Map" section with table showing token names, base values, and scaled values
+- Previous/Next page navigation
+
+#### Scenario: Page displays header with configuration badge
+- **WHEN** user visits `/docs/auto-scale/design-tokens`
+- **THEN** the page title "Design Tokens" is displayed
+- **AND** a "Configuration" badge is shown next to the title
+- **AND** "Configure" and "API Reference" buttons are visible
+
+#### Scenario: Page shows feature cards
+- **WHEN** user views the Design Tokens page
+- **THEN** two feature cards are displayed side by side
+- **AND** "Pre-defined Values" card explains semantic keys like sm, md, lg
+- **AND** "Fully Customizable" card explains ResponsiveProvider customization
+
+#### Scenario: Page shows token usage examples
+- **WHEN** user views the "Using Tokens" section
+- **THEN** a code example shows token strings in createScaledStyles
+- **AND** tokens like 'md', 'sm', 'lg', 'xs', 'xl' are demonstrated
+
+#### Scenario: Page displays default token map
+- **WHEN** user views the "Default Token Map" section
+- **THEN** a table displays token names (xs, sm, md, lg, xl)
+- **AND** base values in pixels are shown
+- **AND** scaled values for iPhone 14 and iPad Pro are shown
+
+#### Scenario: Page navigation works
+- **WHEN** user views the bottom of the page
+- **THEN** Previous link shows "s() Function"
+- **AND** Next link shows "responsive()"
+
+### Requirement: responsive() Function Page Content
+
+The responsive() function page SHALL display documentation with a side-by-side layout containing:
+- Title "Responsive Values" with description about changing layout values by device
+- Left panel: "EXAMPLE USAGE" section with TypeScript badge and code example
+- Right panel: "LIVE PREVIEW" section with device mode switcher (phone, tablet, desktop icons) and "Open in Snack" link
+- Code example showing responsive() usage for columns and spacing
+- Grid preview visualization showing responsive column layout
+- Previous/Next page navigation
+
+#### Scenario: Page displays side-by-side layout
+- **WHEN** user visits `/docs/responsive/responsive-function`
+- **THEN** the page title "Responsive Values" is displayed
+- **AND** a description about changing layout values is shown
+- **AND** content is displayed in a two-column layout
+
+#### Scenario: Example usage panel shows code
+- **WHEN** user views the left panel
+- **THEN** "EXAMPLE USAGE" header is displayed with "TypeScript" badge
+- **AND** a code example shows responsive() function usage
+- **AND** the code demonstrates mobile, tablet, and desktop breakpoints
+
+#### Scenario: Live preview panel has device switcher
+- **WHEN** user views the right panel
+- **THEN** "LIVE PREVIEW" header is displayed with "Open in Snack" link
+- **AND** device mode icons for phone, tablet, and desktop are shown
+- **AND** a preview area shows a responsive grid visualization
+
+#### Scenario: Page navigation works
+- **WHEN** user views the bottom of the page
+- **THEN** Previous link shows "Design Tokens"
+- **AND** Next link shows "useDeviceType"
+

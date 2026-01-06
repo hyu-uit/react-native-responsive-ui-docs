@@ -5,6 +5,8 @@ import { IntroductionPage } from "./content/introduction";
 import { InstallationPage } from "./content/installation";
 import { CreateScaledStylesPage } from "./content/create-scaled-styles";
 import { SFunctionPage } from "./content/s-function";
+import { DesignTokensPage } from "./content/design-tokens";
+import { ResponsiveFunctionPage } from "./content/responsive-function";
 import { PlaceholderPage } from "./content/placeholder";
 
 interface DocsPageProps {
@@ -34,6 +36,10 @@ export default async function DocsPage({ params }: DocsPageProps) {
         <CreateScaledStylesPage />
       ) : slugPath === "auto-scale/s-function" ? (
         <SFunctionPage />
+      ) : slugPath === "auto-scale/design-tokens" ? (
+        <DesignTokensPage />
+      ) : slugPath === "responsive/responsive-function" ? (
+        <ResponsiveFunctionPage />
       ) : (
         <PlaceholderPage title={item.title} />
       )}
