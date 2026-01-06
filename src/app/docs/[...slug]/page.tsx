@@ -4,6 +4,7 @@ import { Breadcrumb } from "@/components/docs/Breadcrumb";
 import { IntroductionPage } from "./content/introduction";
 import { InstallationPage } from "./content/installation";
 import { CreateScaledStylesPage } from "./content/create-scaled-styles";
+import { SFunctionPage } from "./content/s-function";
 import { PlaceholderPage } from "./content/placeholder";
 
 interface DocsPageProps {
@@ -31,6 +32,8 @@ export default async function DocsPage({ params }: DocsPageProps) {
         <InstallationPage />
       ) : slugPath === "auto-scale/create-scaled-styles" ? (
         <CreateScaledStylesPage />
+      ) : slugPath === "auto-scale/s-function" ? (
+        <SFunctionPage />
       ) : (
         <PlaceholderPage title={item.title} />
       )}
