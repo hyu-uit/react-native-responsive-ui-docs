@@ -1,35 +1,42 @@
 @import "tailwindcss";
 
-:root {
-  --background: #0a0a0f;
-  --foreground: #e5e5e5;
-  --primary: #6366f1;
-  --primary-hover: #818cf8;
-  --secondary: #1e1e2e;
-  --accent: #22c55e;
-  --muted: #71717a;
-  --border: #27272a;
-  --code-bg: #18181b;
-}
+@theme {
+  /* Base colors */
+  --color-background: #0a0a0f;
+  --color-foreground: #e5e5e5;
+  --color-primary: #6366f1;
+  --color-primary-hover: #818cf8;
+  --color-secondary: #1e1e2e;
+  --color-accent: #22c55e;
+  --color-muted: #71717a;
+  --color-border: #27272a;
+  --color-code-bg: #18181b;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-hover: var(--primary-hover);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  --color-muted: var(--muted);
-  --color-border: var(--border);
-  --color-code-bg: var(--code-bg);
+  /* Badge colors */
+  --color-badge-bg: rgba(99, 102, 241, 0.1);
+  --color-badge-text: #a5b4fc;
+  --color-badge-dot: #22c55e;
+
+  /* Syntax highlighting colors */
+  --color-syntax-keyword: #c678dd;
+  --color-syntax-string: #98c379;
+  --color-syntax-number: #d19a66;
+  --color-syntax-function: #61afef;
+  --color-syntax-component: #e5c07b;
+  --color-syntax-property: #e06c75;
+  --color-syntax-comment: #5c6370;
+  --color-syntax-bracket: #abb2bf;
+  --color-syntax-operator: #56b6c2;
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  background: theme(colors.background);
+  color: theme(colors.foreground);
+  font-family: theme(fontFamily.sans), system-ui, sans-serif;
 }
 
 /* Custom scrollbar */
@@ -39,22 +46,22 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--secondary);
+  background: theme(colors.secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: theme(colors.border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted);
+  background: theme(colors.muted);
 }
 
 /* Code block styling */
 pre {
-  background: var(--code-bg) !important;
-  border: 1px solid var(--border);
+  background: theme(colors.code-bg) !important;
+  border: 1px solid theme(colors.border);
   border-radius: 12px;
   padding: 1rem;
   overflow-x: auto;
@@ -63,21 +70,21 @@ pre {
 }
 
 code {
-  font-family: var(--font-mono), monospace;
+  font-family: theme(fontFamily.mono), monospace;
 }
 
 /* Inline code */
 :not(pre) > code {
-  background: var(--code-bg);
+  background: theme(colors.code-bg);
   padding: 0.2em 0.4em;
   border-radius: 4px;
   font-size: 0.9em;
-  color: var(--primary-hover);
+  color: theme(colors.primary-hover);
 }
 
 /* Selection */
 ::selection {
-  background: var(--primary);
+  background: theme(colors.primary);
   color: white;
 }
 
@@ -107,4 +114,14 @@ html {
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+}
+
+/* Animated border spin */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
