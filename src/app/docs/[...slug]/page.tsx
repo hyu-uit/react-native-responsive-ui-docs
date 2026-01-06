@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { findNavItem } from "@/lib/docs-navigation";
 import { Breadcrumb } from "@/components/docs/Breadcrumb";
 import { IntroductionPage } from "./content/introduction";
+import { InstallationPage } from "./content/installation";
 import { PlaceholderPage } from "./content/placeholder";
 
 interface DocsPageProps {
@@ -25,6 +26,8 @@ export default async function DocsPage({ params }: DocsPageProps) {
 
       {slugPath === "introduction" ? (
         <IntroductionPage />
+      ) : slugPath === "installation" ? (
+        <InstallationPage />
       ) : (
         <PlaceholderPage title={item.title} />
       )}
