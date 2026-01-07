@@ -7,32 +7,12 @@ import { ScaleExamplesTable } from "@/components/docs/ScaleExamplesTable";
 import { InteractiveDemo } from "@/components/docs/InteractiveDemo";
 import { PageNavigation } from "@/components/docs/PageNavigation";
 
-const basicUsageCode = `<span class="text-syntax-keyword">import</span> React <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">'react'</span>;
-<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> View <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">'react-native'</span>;
-<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> Ionicons <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">'@expo/vector-icons'</span>;
-<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> s <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">'react-native-responsive-ui'</span>;
-
-<span class="text-syntax-keyword">const</span> <span class="text-syntax-function">HeaderIcon</span> <span class="text-syntax-operator">=</span> () <span class="text-syntax-operator">=></span> <span class="text-syntax-bracket">{</span>
-  <span class="text-syntax-keyword">return</span> <span class="text-syntax-bracket">(</span>
-    <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">View</span> style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span> <span class="text-syntax-property">marginTop</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">10</span>) <span class="text-syntax-bracket">}}</span><span class="text-syntax-operator">&gt;</span>
-      <span class="text-syntax-comment">{/* Perfect for props that expect numbers */}</span>
-      <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">Ionicons</span>
-        name<span class="text-syntax-operator">=</span><span class="text-syntax-string">"settings"</span>
-        size<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{</span><span class="text-syntax-function">s</span>(<span class="text-syntax-number">24</span>)<span class="text-syntax-bracket">}</span>
-        color<span class="text-syntax-operator">=</span><span class="text-syntax-string">"black"</span>
-      /<span class="text-syntax-operator">&gt;</span>
-
-      <span class="text-syntax-comment">{/* Or inline styles */}</span>
-      <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">View</span> style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span>
-        <span class="text-syntax-property">width</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">100</span>),
-        <span class="text-syntax-property">height</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">1</span>), <span class="text-syntax-comment">// Scaled hairline separator</span>
-        <span class="text-syntax-property">backgroundColor</span>: <span class="text-syntax-string">'#ccc'</span>
-      <span class="text-syntax-bracket">}}</span> /<span class="text-syntax-operator">&gt;</span>
-    <span class="text-syntax-operator">&lt;</span>/<span class="text-syntax-component">View</span><span class="text-syntax-operator">&gt;</span>
-  <span class="text-syntax-bracket">)</span>;
-<span class="text-syntax-bracket">}</span>;
-
-<span class="text-syntax-keyword">export default</span> HeaderIcon;`;
+const basicUsageCode = `<span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">View</span> style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span>
+  <span class="text-syntax-property">width</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">150</span>),        <span class="text-syntax-comment">// Auto-scales!</span>
+  <span class="text-syntax-property">height</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">150</span>),
+  <span class="text-syntax-property">borderRadius</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">24</span>),
+  <span class="text-syntax-property">backgroundColor</span>: <span class="text-syntax-string">'#6366f1'</span>,
+<span class="text-syntax-bracket">}}</span> />`;
 
 const useCases = [
   {
@@ -63,31 +43,28 @@ const scaleExamples = [
   { input: "s(50) on iPad", output: "~75", device: "iPad Pro" },
 ];
 
-const interactiveDemoCode = `<span class="text-syntax-comment">// s() works inline or in variables</span>
+const interactiveDemoCode = `<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> s <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">"@vincent-huy-uit/react-native-responsive-ui"</span>;
+<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> View, Text <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">"react-native"</span>;
 
-<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> s <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">'rn-responsive'</span>;
-
-<span class="text-syntax-keyword">export default</span> () <span class="text-syntax-operator">=></span> <span class="text-syntax-bracket">(</span>
-  <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">View</span>
-    style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span>
-      <span class="text-syntax-property">flex</span>: <span class="text-syntax-number">1</span>,
-      <span class="text-syntax-property">justifyContent</span>: <span class="text-syntax-string">'center'</span>,
-      <span class="text-syntax-property">alignItems</span>: <span class="text-syntax-string">'center'</span>,
-    <span class="text-syntax-bracket">}}</span>
-  <span class="text-syntax-operator">&gt;</span>
+<span class="text-syntax-keyword">export default function</span> <span class="text-syntax-function">Card</span>() <span class="text-syntax-bracket">{</span>
+  <span class="text-syntax-keyword">return</span> <span class="text-syntax-bracket">(</span>
     <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">View</span>
       style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span>
-        <span class="text-syntax-property">width</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">200</span>),
-        <span class="text-syntax-property">height</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">200</span>),
-        <span class="text-syntax-property">borderRadius</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">20</span>),
-        <span class="text-syntax-property">backgroundColor</span>: <span class="text-syntax-string">'#3b82f6'</span>,
-        <span class="text-syntax-property">alignItems</span>: <span class="text-syntax-string">'center'</span>,
-        <span class="text-syntax-property">justifyContent</span>: <span class="text-syntax-string">'center'</span>,
-        ...
+        <span class="text-syntax-property">padding</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">16</span>),
+        <span class="text-syntax-property">margin</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">20</span>),
+        <span class="text-syntax-property">borderRadius</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">12</span>),
+        <span class="text-syntax-property">backgroundColor</span>: <span class="text-syntax-string">"#1E293B"</span>,
       <span class="text-syntax-bracket">}}</span>
-    /<span class="text-syntax-operator">&gt;</span>
-  <span class="text-syntax-operator">&lt;</span>/<span class="text-syntax-component">View</span><span class="text-syntax-operator">&gt;</span>
-<span class="text-syntax-bracket">)</span>;`;
+    <span class="text-syntax-operator">&gt;</span>
+      <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">Text</span> style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span> <span class="text-syntax-property">fontSize</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">24</span>), <span class="text-syntax-property">color</span>: <span class="text-syntax-string">"#fff"</span> <span class="text-syntax-bracket">}}</span><span class="text-syntax-operator">&gt;</span>
+        Hello World
+      <span class="text-syntax-operator">&lt;</span>/<span class="text-syntax-component">Text</span><span class="text-syntax-operator">&gt;</span>
+      <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">Text</span> style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span> <span class="text-syntax-property">fontSize</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">14</span>), <span class="text-syntax-property">marginTop</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">8</span>), <span class="text-syntax-property">color</span>: <span class="text-syntax-string">"#94A3B8"</span> <span class="text-syntax-bracket">}}</span><span class="text-syntax-operator">&gt;</span>
+        All sizes scale automatically!
+      <span class="text-syntax-operator">&lt;</span>/<span class="text-syntax-component">Text</span><span class="text-syntax-operator">&gt;</span>
+    <span class="text-syntax-operator">&lt;</span>/<span class="text-syntax-component">View</span><span class="text-syntax-operator">&gt;</span>
+  <span class="text-syntax-bracket">)</span>;
+<span class="text-syntax-bracket">}</span>`;
 
 export function SFunctionPage() {
   return (
@@ -132,9 +109,9 @@ export function SFunctionPage() {
           and wrap your numeric values.
         </p>
         <div className="text-xs text-muted mb-2 text-right">
-          components/HeaderIcon.tsx
+          components/Card.tsx
         </div>
-        <CodeBlock filename="components/HeaderIcon.tsx" code={basicUsageCode} />
+        <CodeBlock filename="components/Card.tsx" code={basicUsageCode} />
       </section>
 
       {/* Where to use */}
@@ -157,18 +134,17 @@ export function SFunctionPage() {
         <InteractiveDemo
           code={interactiveDemoCode}
           snackUrl="https://snack.expo.dev"
+          previewType="card"
         />
       </section>
 
       {/* Navigation */}
+
       <PageNavigation
-        previous={{
+        previous={{ title: "Installation", href: "/docs/installation" }}
+        next={{
           title: "createScaledStyles",
           href: "/docs/auto-scale/create-scaled-styles",
-        }}
-        next={{
-          title: "Design Tokens",
-          href: "/docs/auto-scale/design-tokens",
         }}
       />
     </div>

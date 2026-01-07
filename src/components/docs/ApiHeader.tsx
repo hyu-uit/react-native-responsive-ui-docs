@@ -7,6 +7,7 @@ interface ApiHeaderProps {
   description: string;
   demoUrl?: string;
   sourceUrl?: string;
+  hasButtons?: boolean;
 }
 
 export function ApiHeader({
@@ -15,6 +16,7 @@ export function ApiHeader({
   description,
   demoUrl,
   sourceUrl,
+  hasButtons = true,
 }: ApiHeaderProps) {
   return (
     <div className="mb-10">
@@ -36,29 +38,20 @@ export function ApiHeader({
       </p>
 
       {/* Action buttons */}
-      <div className="flex items-center gap-3">
-        {demoUrl && (
-          <Link
-            href={demoUrl}
-            target="_blank"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-hover text-white text-sm font-medium rounded-lg transition-colors"
-          >
-            <Play className="w-4 h-4" />
-            Live Demo
-          </Link>
-        )}
-        {sourceUrl && (
-          <Link
-            href={sourceUrl}
-            target="_blank"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-secondary border border-border hover:border-muted text-foreground text-sm font-medium rounded-lg transition-colors"
-          >
-            <FileCode className="w-4 h-4" />
-            View Source
-          </Link>
-        )}
-      </div>
+      {hasButtons && (
+        <div className="flex items-center gap-3">
+          {demoUrl && (
+            <Link
+              href={demoUrl}
+              target="_blank"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-hover text-white text-sm font-medium rounded-lg transition-colors"
+            >
+              <Play className="w-4 h-4" />
+              Live Demo
+            </Link>
+          )}
+        </div>
+      )}
     </div>
   );
 }
-

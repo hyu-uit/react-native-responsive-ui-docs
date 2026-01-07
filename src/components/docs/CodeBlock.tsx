@@ -18,7 +18,7 @@ export function CodeBlock({ filename, code }: CodeBlockProps) {
   };
 
   return (
-    <div className="bg-code-bg border border-border rounded-xl overflow-hidden">
+    <div className="bg-code-bg border border-border rounded-xl overflow-hidden h-full flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-secondary">
         <div className="flex items-center gap-2">
@@ -46,10 +46,9 @@ export function CodeBlock({ filename, code }: CodeBlockProps) {
       </div>
 
       {/* Code content */}
-      <pre className="p-4 text-sm leading-relaxed overflow-x-auto bg-transparent border-0 rounded-none">
+      <pre className="p-4 text-sm leading-relaxed overflow-x-auto bg-transparent border-0 rounded-none flex-1">
         <code dangerouslySetInnerHTML={{ __html: code }} />
       </pre>
     </div>
   );
 }
-

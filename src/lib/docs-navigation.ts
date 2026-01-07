@@ -19,8 +19,8 @@ export const docsNavigation: NavSection[] = [
   {
     title: "AUTO SCALE",
     items: [
-      { title: "createScaledStyles", slug: "auto-scale/create-scaled-styles" },
       { title: "s() Function", slug: "auto-scale/s-function" },
+      { title: "createScaledStyles", slug: "auto-scale/create-scaled-styles" },
       { title: "Design Tokens", slug: "auto-scale/design-tokens" },
     ],
   },
@@ -29,15 +29,15 @@ export const docsNavigation: NavSection[] = [
     items: [
       { title: "responsive()", slug: "responsive/responsive-function" },
       { title: "useDeviceType", slug: "responsive/use-device-type" },
-      { title: "useBreakpoint", slug: "responsive/use-breakpoint" },
     ],
   },
   {
+    title: "CONFIG",
+    items: [{ title: "ResponsiveProvider", slug: "config/provider" }],
+  },
+  {
     title: "RESPONSIVE SWITCH",
-    items: [
-      { title: "ResponsiveSwitch", slug: "responsive-switch/component" },
-      { title: "Layout Patterns", slug: "responsive-switch/layout-patterns" },
-    ],
+    items: [{ title: "ResponsiveSwitch", slug: "responsive-switch/component" }],
   },
 ];
 

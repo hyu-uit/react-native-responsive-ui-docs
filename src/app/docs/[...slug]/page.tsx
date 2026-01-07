@@ -7,6 +7,8 @@ import { CreateScaledStylesPage } from "./content/create-scaled-styles";
 import { SFunctionPage } from "./content/s-function";
 import { DesignTokensPage } from "./content/design-tokens";
 import { ResponsiveFunctionPage } from "./content/responsive-function";
+import { UseDeviceTypePage } from "./content/use-device-type";
+import { ProviderPage } from "./content/provider";
 import { ResponsiveSwitchPage } from "./content/responsive-switch";
 import { PlaceholderPage } from "./content/placeholder";
 
@@ -41,6 +43,10 @@ export default async function DocsPage({ params }: DocsPageProps) {
         <DesignTokensPage />
       ) : slugPath === "responsive/responsive-function" ? (
         <ResponsiveFunctionPage />
+      ) : slugPath === "responsive/use-device-type" ? (
+        <UseDeviceTypePage />
+      ) : slugPath === "config/provider" ? (
+        <ProviderPage />
       ) : slugPath === "responsive-switch/component" ? (
         <ResponsiveSwitchPage />
       ) : (
@@ -62,7 +68,7 @@ export function generateStaticParams() {
     // Responsive
     { slug: ["responsive", "responsive-function"] },
     { slug: ["responsive", "use-device-type"] },
-    { slug: ["responsive", "use-breakpoint"] },
+    { slug: ["config", "provider"] },
     // Responsive Switch
     { slug: ["responsive-switch", "component"] },
     { slug: ["responsive-switch", "layout-patterns"] },

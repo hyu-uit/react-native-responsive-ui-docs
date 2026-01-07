@@ -5,8 +5,8 @@ import { SearchBar } from "./SearchBar";
 
 const navLinks = [
   { href: "/docs", label: "Docs" },
-  { href: "/components", label: "Components" },
-  { href: "/blog", label: "Blog" },
+  // { href: "/components", label: "Components" },
+  // { href: "/blog", label: "Blog" },
 ];
 
 export function Navbar() {

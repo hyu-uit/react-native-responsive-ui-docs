@@ -32,9 +32,7 @@ export function Footer() {
               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
                 <LayoutGrid className="w-4 h-4 text-white" />
               </div>
-              <span className="font-semibold text-foreground">
-                RN Responsive UI
-              </span>
+              <span className="font-semibold text-foreground">Scalio</span>
             </Link>
             <p className="text-sm text-muted leading-relaxed">
               Built for the community, open source and free forever. Licensed
@@ -74,8 +72,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted">
-            © {new Date().getFullYear()} React Native Responsive UI. All rights
-            reserved.
+            © {new Date().getFullYear()} Scalio. All rights reserved.
           </p>
         </div>
       </div>

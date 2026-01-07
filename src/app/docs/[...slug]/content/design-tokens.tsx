@@ -13,8 +13,7 @@ const featureCards = [
     title: "Pre-defined Values",
     description: (
       <>
-        Use semantic keys like{" "}
-        <code className="text-primary-hover">sm</code>,{" "}
+        Use semantic keys like <code className="text-primary-hover">sm</code>,{" "}
         <code className="text-primary-hover">md</code>, or{" "}
         <code className="text-primary-hover">lg</code> instead of magic numbers.
         We handle the responsive calculation for you.
@@ -28,30 +27,35 @@ const featureCards = [
     description: (
       <>
         Override the default scale or introduce your own design system tokens
-        using the{" "}
-        <code className="text-primary-hover">ResponsiveProvider</code>.
+        using the <code className="text-primary-hover">ResponsiveProvider</code>
+        .
       </>
     ),
   },
 ];
 
-const usingTokensCode = `<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> createScaledStyles <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">'react-native-responsive-ui'</span>;
+const usingTokensCode = `<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> space, font, radius <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">"@vincent-huy-uit/react-native-responsive-ui"</span>;
+<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> View, Text <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">"react-native"</span>;
 
-<span class="text-syntax-keyword">const</span> styles <span class="text-syntax-operator">=</span> <span class="text-syntax-function">createScaledStyles</span><span class="text-syntax-bracket">({</span>
-  <span class="text-syntax-property">container</span>: <span class="text-syntax-bracket">{</span>
-    <span class="text-syntax-comment">// 'md' maps to 16, then scales (e.g., ~18 on larger screens)</span>
-    <span class="text-syntax-property">padding</span>: <span class="text-syntax-string">'md'</span>,
-    <span class="text-syntax-comment">// 'sm' maps to 8, then scales</span>
-    <span class="text-syntax-property">marginBottom</span>: <span class="text-syntax-string">'sm'</span>,
-    <span class="text-syntax-property">borderRadius</span>: <span class="text-syntax-string">'lg'</span>,
-    <span class="text-syntax-property">gap</span>: <span class="text-syntax-string">'xs'</span>,
-  <span class="text-syntax-bracket">}</span>,
-  <span class="text-syntax-property">text</span>: <span class="text-syntax-bracket">{</span>
-    <span class="text-syntax-comment">// Typography tokens work too</span>
-    <span class="text-syntax-property">fontSize</span>: <span class="text-syntax-string">'xl'</span>,
-    <span class="text-syntax-property">lineHeight</span>: <span class="text-syntax-string">'loose'</span>
-  <span class="text-syntax-bracket">}</span>
-<span class="text-syntax-bracket">}</span>);`;
+<span class="text-syntax-keyword">export default function</span> <span class="text-syntax-function">Card</span>() <span class="text-syntax-bracket">{</span>
+  <span class="text-syntax-keyword">return</span> <span class="text-syntax-bracket">(</span>
+    <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">View</span>
+      style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span>
+        <span class="text-syntax-property">padding</span>: space.lg,        <span class="text-syntax-comment">// 24 (scaled)</span>
+        <span class="text-syntax-property">margin</span>: space.md,         <span class="text-syntax-comment">// 16 (scaled)</span>
+        <span class="text-syntax-property">borderRadius</span>: radius.lg,  <span class="text-syntax-comment">// 16 (scaled)</span>
+        <span class="text-syntax-property">backgroundColor</span>: <span class="text-syntax-string">"#1E293B"</span>,
+      <span class="text-syntax-bracket">}}</span>
+    <span class="text-syntax-operator">&gt;</span>
+      <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">Text</span> style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span> <span class="text-syntax-property">fontSize</span>: font.title, <span class="text-syntax-property">color</span>: <span class="text-syntax-string">"#fff"</span> <span class="text-syntax-bracket">}}</span><span class="text-syntax-operator">&gt;</span>
+        Title Text
+      <span class="text-syntax-operator">&lt;</span>/<span class="text-syntax-component">Text</span><span class="text-syntax-operator">&gt;</span>
+      <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">Text</span> style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span> <span class="text-syntax-property">fontSize</span>: font.body, <span class="text-syntax-property">marginTop</span>: space.sm, <span class="text-syntax-property">color</span>: <span class="text-syntax-string">"#94A3B8"</span> <span class="text-syntax-bracket">}}</span><span class="text-syntax-operator">&gt;</span>
+        Body text with consistent spacing
+      <span class="text-syntax-operator">&lt;</span>/<span class="text-syntax-component">Text</span><span class="text-syntax-operator">&gt;</span>
+    <span class="text-syntax-operator">&lt;</span>/<span class="text-syntax-component">View</span><span class="text-syntax-operator">&gt;</span>
+  <span class="text-syntax-bracket">)</span>;
+<span class="text-syntax-bracket">}</span>`;
 
 const customizingCode = `<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> ResponsiveProvider <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">'react-native-responsive-ui'</span>;
 
@@ -136,9 +140,9 @@ export function DesignTokensPage() {
           width.
         </p>
         <div className="text-xs text-muted mb-2 text-right">
-          components/Button.tsx
+          components/Card.tsx
         </div>
-        <CodeBlock filename="components/Button.tsx" code={usingTokensCode} />
+        <CodeBlock filename="components/Card.tsx" code={usingTokensCode} />
       </section>
 
       {/* Customizing via Provider */}
@@ -161,7 +165,10 @@ export function DesignTokensPage() {
 
       {/* Navigation */}
       <PageNavigation
-        previous={{ title: "s() Function", href: "/docs/auto-scale/s-function" }}
+        previous={{
+          title: "createScaledStyles",
+          href: "/docs/auto-scale/create-scaled-styles",
+        }}
         next={{
           title: "responsive()",
           href: "/docs/responsive/responsive-function",
@@ -170,4 +177,3 @@ export function DesignTokensPage() {
     </div>
   );
 }
-

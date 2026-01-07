@@ -4,30 +4,37 @@ import { InfoCard } from "@/components/docs/InfoCard";
 import { CodeBlock } from "@/components/docs/CodeBlock";
 
 const installTabs = [
-  { id: "npm", label: "NPM", code: "npm install react-native-size-matters" },
-  { id: "yarn", label: "YARN", code: "yarn add react-native-size-matters" },
+  {
+    id: "npm",
+    label: "NPM",
+    code: "npm install @vincent-huy-uit/react-native-responsive-ui",
+  },
+  {
+    id: "yarn",
+    label: "YARN",
+    code: "yarn add @vincent-huy-uit/react-native-responsive-ui",
+  },
   {
     id: "expo",
     label: "EXPO",
-    code: "npx expo install react-native-size-matters",
+    code: "npx expo install @vincent-huy-uit/react-native-responsive-ui",
   },
 ];
 
-const verifyCode = `<span class="text-syntax-keyword">import</span> React <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">'react'</span>;
-<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> View, Text <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">'react-native'</span>;
+const verifyCode = `<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> s, useDeviceType <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">"@vincent-huy-uit/react-native-responsive-ui"</span>;
+<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> View, Text <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">"react-native"</span>;
 
-<span class="text-syntax-comment">// Import the functions</span>
-<span class="text-syntax-keyword">import</span> <span class="text-syntax-bracket">{</span> scale, verticalScale <span class="text-syntax-bracket">}</span> <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">'react-native-size-matters'</span>;
+<span class="text-syntax-keyword">export default function</span> <span class="text-syntax-function">App</span>() <span class="text-syntax-bracket">{</span>
+  <span class="text-syntax-keyword">const</span> device = <span class="text-syntax-function">useDeviceType</span>();
 
-<span class="text-syntax-keyword">const</span> <span class="text-syntax-function">App</span> = () <span class="text-syntax-operator">=></span> <span class="text-syntax-bracket">(</span>
-  <span class="text-syntax-bracket">&lt;</span><span class="text-syntax-component">View</span> style=<span class="text-syntax-bracket">{{</span>
-    <span class="text-syntax-property">width</span>: <span class="text-syntax-function">scale</span>(<span class="text-syntax-number">300</span>),
-    <span class="text-syntax-property">height</span>: <span class="text-syntax-function">verticalScale</span>(<span class="text-syntax-number">50</span>),
-    <span class="text-syntax-property">backgroundColor</span>: <span class="text-syntax-string">'red'</span>
-  <span class="text-syntax-bracket">}}</span> /&gt;
-<span class="text-syntax-bracket">)</span>;
-
-<span class="text-syntax-keyword">export default</span> App;`;
+  <span class="text-syntax-keyword">return</span> <span class="text-syntax-bracket">(</span>
+    <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">View</span> style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span> <span class="text-syntax-property">flex</span>: <span class="text-syntax-number">1</span>, <span class="text-syntax-property">justifyContent</span>: <span class="text-syntax-string">"center"</span>, <span class="text-syntax-property">alignItems</span>: <span class="text-syntax-string">"center"</span> <span class="text-syntax-bracket">}}</span><span class="text-syntax-operator">&gt;</span>
+      <span class="text-syntax-operator">&lt;</span><span class="text-syntax-component">Text</span> style<span class="text-syntax-operator">=</span><span class="text-syntax-bracket">{{</span> <span class="text-syntax-property">fontSize</span>: <span class="text-syntax-function">s</span>(<span class="text-syntax-number">24</span>) <span class="text-syntax-bracket">}}</span><span class="text-syntax-operator">&gt;</span>
+        ✅ Library works! Device: <span class="text-syntax-bracket">{</span>device<span class="text-syntax-bracket">}</span>
+      <span class="text-syntax-operator">&lt;</span>/<span class="text-syntax-component">Text</span><span class="text-syntax-operator">&gt;</span>
+    <span class="text-syntax-operator">&lt;</span>/<span class="text-syntax-component">View</span><span class="text-syntax-operator">&gt;</span>
+  <span class="text-syntax-bracket">)</span>;
+<span class="text-syntax-bracket">}</span>`;
 
 export function InstallationPage() {
   return (
@@ -39,8 +46,8 @@ export function InstallationPage() {
 
       {/* Description */}
       <p className="text-muted text-lg mb-10 leading-relaxed">
-        Get up and running with RN Size Matters in seconds. No native linking
-        required.
+        Get up and running with react-native-responsive-ui in seconds. No native
+        linking required.
       </p>
 
       {/* Steps grid */}
@@ -61,7 +68,7 @@ export function InstallationPage() {
 
         {/* Right column: Step 2 */}
         <StepCard step={2} title="Verify Installation" className="h-fit">
-          <CodeBlock filename="App.js" code={verifyCode} />
+          <CodeBlock filename="Verify.js" code={verifyCode} />
         </StepCard>
       </div>
 
@@ -72,12 +79,8 @@ export function InstallationPage() {
         </h2>
         <div className="grid md:grid-cols-2 gap-4">
           <InfoCard variant="warning" title="TypeScript Definitions">
-            If you are using TypeScript, types are included in the package. You
-            don&apos;t need to install{" "}
-            <code className="text-primary-hover">
-              @types/react-native-size-matters
-            </code>
-            .
+            If you are using TypeScript, types are included in the package. No
+            additional type definitions required.
           </InfoCard>
           <InfoCard variant="info" title="Reset Cache">
             If you encounter resolution errors after installing, try resetting

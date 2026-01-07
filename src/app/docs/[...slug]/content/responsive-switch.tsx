@@ -97,7 +97,8 @@ export function ResponsiveSwitchPage() {
               structures or layouts for phones and tablets. Instead of
               scattering{" "}
               <code className="text-primary-hover">if (isTablet)</code> checks
-              throughout your JSX, <code className="text-primary-hover">ResponsiveSwitch</code> lets
+              throughout your JSX,{" "}
+              <code className="text-primary-hover">ResponsiveSwitch</code> lets
               you clearly define platform-specific variants in a clean, readable
               way.
             </p>
@@ -144,8 +145,8 @@ export function ResponsiveSwitchPage() {
       {/* Navigation */}
       <PageNavigation
         previous={{
-          title: "useBreakpoint",
-          href: "/docs/responsive/use-breakpoint",
+          title: "ResponsiveProvider",
+          href: "/docs/config/provider",
         }}
         next={{
           title: "Layout Patterns",
@@ -155,4 +156,3 @@ export function ResponsiveSwitchPage() {
     </div>
   );
 }
-
