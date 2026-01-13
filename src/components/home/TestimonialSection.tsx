@@ -1,5 +1,4 @@
 import { Quote } from "lucide-react";
-import Image from "next/image";
 
 export function TestimonialSection() {
   return (
@@ -23,25 +22,15 @@ export function TestimonialSection() {
             </div>
 
             <blockquote className="text-xl md:text-2xl text-foreground font-medium leading-relaxed mb-8">
-              &ldquo;This library removed 90% of the styling boilerplate we used
-              to write for our Expo apps. The responsive hooks are a game
-              changer.&rdquo;
+              &ldquo;I hope Expo team can create a function that can use .tablet
+              or .mobile file name to render base on device&rdquo;
             </blockquote>
 
             <div className="flex items-center justify-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-muted/30 overflow-hidden">
-                <Image
-                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=alex"
-                  alt="Alex Chen"
-                  width={48}
-                  height={48}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="text-left">
-                <div className="font-medium text-foreground">Alex Chen</div>
+              <div className="text-center">
+                <div className="font-medium text-foreground">Vincent Huynh</div>
                 <div className="text-sm text-muted">
-                  Senior React Native Engineer
+                  Author | React Native Engineer
                 </div>
               </div>
             </div>
