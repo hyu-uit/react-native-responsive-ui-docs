@@ -138,7 +138,7 @@ export function ResponsiveSwitchPage() {
         <PhonePreviewDemo
           code={interactiveDemoCode}
           filename="App.js"
-          snackUrl="https://snack.expo.dev"
+          snackUrl="https://snack.expo.dev/@vincent232/30ec50"
         />
       </section>
 

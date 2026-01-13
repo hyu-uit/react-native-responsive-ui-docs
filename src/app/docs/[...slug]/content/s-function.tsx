@@ -133,7 +133,7 @@ export function SFunctionPage() {
         <SectionHeading>Interactive Demo</SectionHeading>
         <InteractiveDemo
           code={interactiveDemoCode}
-          snackUrl="https://snack.expo.dev"
+          snackUrl="https://snack.expo.dev/@vincent232/s-function"
           previewType="card"
         />
       </section>

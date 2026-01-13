@@ -127,7 +127,7 @@ export function CreateScaledStylesPage() {
         <SectionHeading>Interactive Demo</SectionHeading>
         <InteractiveDemo
           code={interactiveDemoCode}
-          snackUrl="https://snack.expo.dev"
+          snackUrl="https://snack.expo.dev/@vincent232/createscaledstyle"
           previewType="card"
         />
       </section>
