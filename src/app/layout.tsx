@@ -31,6 +31,22 @@ export const metadata: Metadata = {
     title: "React Native Responsive UI",
     description: "Zero-config responsive design for React Native / Expo",
     type: "website",
+    images: [
+      {
+        url: "https://i.ibb.co/JWbSThCw/Gemini-Generated-Image-rohhjzrohhjzrohh.png",
+        width: 1200,
+        height: 630,
+        alt: "React Native Responsive UI",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "React Native Responsive UI",
+    description: "Zero-config responsive design for React Native / Expo",
+    images: [
+      "https://i.ibb.co/JWbSThCw/Gemini-Generated-Image-rohhjzrohhjzrohh.png",
+    ],
   },
 };
 
